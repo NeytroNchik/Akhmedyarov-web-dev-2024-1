@@ -1,0 +1,276 @@
+html * {
+    font-size: 1em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    color: salmon;
+}
+
+nav {
+    font-size: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    margin: 15px 0px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    margin-left: 64px;
+}
+
+ul {
+    margin-left: 24px;
+}
+
+table {
+    margin-left: 64px;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: 1.7px solid black;
+    text-align:center;
+    vertical-align: middle;
+}
+
+td {
+    word-wrap: break-word;
+    height: 23px;
+    font-size: 15px;
+}
+
+table {
+    table-layout: fixed;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0px 20px 20px;
+    align-items: center;
+}
+
+nav a {
+    margin-right: 15px;
+    color: #000;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+header a {
+    transition: all 0.2s ease;
+    padding-right: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+header a:hover {
+    color: salmon;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+section div div {
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 35px;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #000;
+    position:absolute;
+    margin-top:30px;
+    left: 0px;
+    width: 100%;
+}
+
+#foot {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    margin-top:20px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.number {
+    width: 20px;
+}
+
+.name {
+    width: 250px;
+}
+
+.amount {
+    width: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.price {
+    width: 50px;
+}
+
+.item:hover button {
+    background-color: rgb(114, 114, 114);
+}
+
+.item:hover {
+    border: 2px solid salmon;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 35px;
+}
+
+.item p {
+    margin: 0px;
+}
+
+.item button {
+    background-color: #f1eee9;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.lunch_price {
+    padding-top: 10px;
+    font-size: medium;
+}
+
+.lunch_name {
+    padding-top: 5px;
+}
+
+.lunch_volume {
+    font-size:small;
+    color: gray;
+    padding: 30px 0px 9px 0px;
+}
+
+.active {
+    color: tomato;
+}
+
+.crop-img {
+    width: 512px;
+    height: 448px;
+    object-fit: cover; 
+}
+
+#foot {
+    color: white;
+}
+
+#mainheader{
+    font-size: 32px;
+}
+
+@media (max-width: 800px) {
+
+    #mainimg {
+        padding:0;
+        margin:0;
+        width: 500px;
+    }
+
+
+    section div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        justify-content: space-between;
+        padding: 0;
+        margin: 15px 0px;
+        list-style: none;
+    }
+}
+
+@media (max-width: 600px){
+
+    #mainimg {
+        padding:0;
+        margin:0;
+        width: 100%;
+    }
+
+    #mainpar {
+        padding:0;
+        margin:0;
+    }
+
+    table{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    table, th, td {
+        font-size: 13px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    section h2 {
+        text-align: center;
+    }
+
+    section div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    table, th, td {
+        font-size: 11px;
+    }
+}
