@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # или та ветка, которую ты используешь
+      - main  
 
 jobs:
   deploy:
@@ -13,14 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build and deploy
+      - name: Copy content to public directory
         run: |
           mkdir public
-          cp -R lab3/* public
-          echo "lab3 контент скопирован в public!"
-        
+          cp -R lab3/* public 
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          github_token: ${{ secrets.ACTIONS_PAT }} 
+          publish_dir: ./public  
