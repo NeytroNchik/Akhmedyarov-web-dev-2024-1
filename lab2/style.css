@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 html * {
     font-size: 1em;
     color: #000;
@@ -19,6 +30,7 @@ nav {
 
 h2 {
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -36,7 +48,7 @@ table {
 table, td, th {
     border-collapse: collapse;
     border: 1.7px solid black;
-    text-align:center;
+    text-align: center;
     vertical-align: middle;
 }
 
@@ -70,6 +82,7 @@ nav a {
 
 main {
     padding: 20px;
+    min-height: calc(100vh - 200px); 
 }
 
 header a {
@@ -105,28 +118,34 @@ section div div {
     border-radius: 35px;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background-color: white;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Добавлен вертикальный отступ между карточками */
 }
 
 footer {
     background-color: #000;
-    position:absolute;
-    margin-top:30px;
-    left: 0px;
+    color: white;
     width: 100%;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
 }
 
 #foot {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 20px;
-    margin-top:20px;
-    margin-left: 20px;
     text-decoration: none;
+}
+
+#mainheader {
+    font-size: 32px;
+}
+
+.crop-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 512px; /* Ограничение ширины для предотвращения переполнения */
 }
 
 .number {
@@ -182,7 +201,7 @@ footer {
 }
 
 .lunch_volume {
-    font-size:small;
+    font-size: small;
     color: gray;
     padding: 30px 0px 9px 0px;
 }
@@ -191,31 +210,20 @@ footer {
     color: tomato;
 }
 
-.crop-img {
-    width: 512px;
-    height: 448px;
-    object-fit: cover; 
-}
-
 #foot {
     color: white;
 }
 
-#mainheader{
-    font-size: 32px;
-}
-
 @media (max-width: 800px) {
-
     #mainimg {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
         width: 500px;
     }
 
-
     section div {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     nav {
@@ -226,20 +234,19 @@ footer {
     }
 }
 
-@media (max-width: 600px){
-
+@media (max-width: 600px) {
     #mainimg {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
         width: 100%;
     }
 
     #mainpar {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
     }
 
-    table{
+    table {
         padding: 0;
         margin: 0;
         width: 100%;

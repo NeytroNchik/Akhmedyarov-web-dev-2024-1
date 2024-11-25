@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 html * {
     font-size: 1em;
     color: #000;
@@ -19,6 +30,7 @@ nav {
 
 h2 {
     font-size: 24px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -31,12 +43,13 @@ ul {
 
 table {
     margin-left: 64px;
+    table-layout: fixed;
 }
 
 table, td, th {
     border-collapse: collapse;
     border: 1.7px solid black;
-    text-align:center;
+    text-align: center;
     vertical-align: middle;
 }
 
@@ -44,10 +57,6 @@ td {
     word-wrap: break-word;
     height: 23px;
     font-size: 15px;
-}
-
-table {
-    table-layout: fixed;
 }
 
 th {
@@ -70,6 +79,7 @@ nav a {
 
 main {
     padding: 20px;
+    min-height: calc(100vh - 200px); 
 }
 
 header a {
@@ -98,34 +108,42 @@ section div div {
     border: 2px solid transparent;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 30px 40px;
     cursor: pointer;
     text-align: left;
     border-radius: 35px;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background-color: white;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Отступ между карточками */
 }
 
 footer {
     background-color: #000;
-    position:absolute;
-    margin-top:30px;
-    left: 0px;
+    color: white;
     width: 100%;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
 }
 
 #foot {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 20px;
-    margin-top:20px;
-    margin-left: 20px;
     text-decoration: none;
+    color: white;
+}
+
+#mainheader {
+    font-size: 32px;
+}
+
+.crop-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 512px;
 }
 
 .number {
@@ -181,22 +199,14 @@ footer {
 }
 
 .lunch_volume {
-    font-size:small;
+    font-size: small;
     color: gray;
     padding: 30px 0px 9px 0px;
 }
 
-.crop-img {
-    width: 512px;
-    height: 448px;
-    object-fit: cover; 
+.active {
+    color: tomato;
 }
-
-#foot {
-    color: white;
-}
-
-/*__________________________________________________*/
 
 #container_form {
     max-width: 1200px;
@@ -262,20 +272,52 @@ input[type="checkbox"] {
 
 fieldset {
     border: none;
-    padding: 0px;
-    margin-left: -50px;
-  }
-  
-legend {
-    font-weight: bold;
-    margin-left: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-.formPS {
-    font-size: 14px;
-    color: #888;
-    font-style: italic;
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Расстояние между радиокнопкой и текстом */
+    font-size: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+input[type="radio"]:hover {
+    border-color: #999;
+}
+
 
 #deliveryTime div {
     display: flex;
@@ -283,13 +325,9 @@ legend {
     gap: 10px; 
 }
 
-.details_form p {
+.details_form p, .orderFormDetails p {
     margin-left: 0px;
 }
-
-.orderFormDetails p {
-    margin-left: 0px;
-  }
 
 #deliveryTime label {
     display: flex;
@@ -299,18 +337,9 @@ legend {
 
 .button-row {
     display: flex;
-    justify-content: space-between; /* Горизонтально размещаем кнопки */
-    gap: 20px; /* Промежуток между кнопками */
-    margin-top: 20px;
-}
-
-.button-row {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-top: -20px;
-    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .form-button {
@@ -328,77 +357,61 @@ legend {
     background-color: #ddd;
 }
 
-
 @media (max-width: 768px) {
     .form-cols {
         flex-direction: column;
     }
-
     .details_form, .orderFormDetails {
         width: 100%;
-        
     }
 }
 
 @media (max-width: 800px) {
-
     #mainimg {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
         width: 500px;
     }
-
-
     section div {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
-
     nav {
         justify-content: space-between;
         padding: 0;
-        margin: 15px 0px;
         list-style: none;
     }
 }
 
-@media (max-width: 600px){
-
+@media (max-width: 600px) {
     #mainimg {
-        padding:0;
-        margin:0;
-        width: 100%;
-    }
-
-    #mainpar {
-        padding:0;
-        margin:0;
-    }
-
-    table{
         padding: 0;
         margin: 0;
         width: 100%;
     }
-
+    #mainpar {
+        padding: 0;
+        margin: 0;
+    }
+    table {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
     table, th, td {
         font-size: 13px;
     }
-
     h1 {
         text-align: center;
     }
-
     nav {
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
         font-size: 30px;
     }
-
     section h2 {
         text-align: center;
     }
-
     section div {
         grid-template-columns: repeat(1, 1fr);
     }
