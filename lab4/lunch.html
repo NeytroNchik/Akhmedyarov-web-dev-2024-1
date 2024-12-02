@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task 1</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header>
+		<h1 id="mainheader">Food Construct</h1>
+		<nav>
+			<a href="index.html">О нас</a>
+			<a href="lunch.html" style="color: tomato">Собрать ланч</a>
+			<a href="#">Заказы</a>
+			<a href="#contacts">Контакты</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<section>
+			<h2>Выберите суп</h2>
+			<div class="items" id="soup-items"></div>
+		</section>
+		
+		<section>
+			<h2>Выберите главное блюдо</h2>
+			<div class="items" id="main-items"></div>
+		</section>
+
+		<section>
+			<h2>Выберите напиток</h2>
+			<div class="items" id="drink-items"></div>
+		</section>
+	</main>
+
+	<div id="container_form">
+		<section id="order_form">
+			<h2>Сделать заказ</h2>
+			<form action="https://httpbin.org/post" method="post">
+				<div class="form-cols">
+					<div class="details_form">
+						<h3>Ваш заказ</h3>
+						<div id="order-items">
+							<p>Ничего не выбрано</p>
+						</div>
+						<div id="order-summary" style="display: none;">
+							<p>Стоимость заказа: <span id="total-price">0₽</span></p>
+						</div>
+
+						<label for="comment">Комментарии к заказу<br>
+							<textarea id="comment" name="comment" rows="10" cols="36"></textarea>
+						</label>
+					</div>
+
+					<div class="orderFormDetails">
+						<h3>Ваши данные</h3>
+						<label for="nameField">Имя<br>
+							<input type="text" id="nameField" name="nameField" required>
+						</label>
+						<label for="emailField">Email<br>
+							<input type="email" id="emailField" name="emailField" required>
+						</label>
+						<label for="spamConfirmation">
+							<input type="checkbox" id="spamConfirmation" name="spamConfirmation" checked> Получать информацию о скидках и акциях
+						</label>
+						<label for="phoneField">Номер телефона<br>
+							<input type="tel" id="phoneField" name="phoneField" required>
+						</label>
+						<label for="addressField">Адрес доставки<br>
+							<input type="text" id="addressField" name="addressField" required>
+							<span class="formPS">Доставка осуществляется только по Москве</span>
+						</label>
+
+						<fieldset id="deliveryTime">
+							<legend>Время доставки:</legend>
+							<label for="fast">
+								<input type="radio" id="fast" name="deliveryTime" value="fast" required> Как можно скорее
+							</label>
+							<label for="timed">
+								<input type="radio" id="timed" name="deliveryTime" value="timed"> К указанному времени
+							</label>
+						</fieldset>
+
+						<label for="exactTime">Укажите время доставки<br>
+							<input type="time" id="exactTime" name="exactTime" min="07:00" max="23:00" step="300">
+							<span class="formPS">Доступное время доставки с 7:00 до 23:00</span>
+						</label>
+
+						<div class="button-row">
+							<button type="reset" class="form-button">Сбросить</button>
+							<button type="submit" class="form-button">Отправить</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</section>
+	</div>
+
+	<!-- Подключаем JS файлы -->
+	<script src="dishes.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ nav {
     flex-wrap: wrap;
     gap: 5px;
     list-style: none;
-    margin: 15px 0px;
+    margin: 15px 0;
 }
 
 h2 {
@@ -60,14 +60,13 @@ td {
 }
 
 th {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
     font-size: 15px;
 }
 
 header {
     background-color: #fff;
-    padding: 20px 0px 20px 20px;
+    padding: 20px 0 20px 20px;
     align-items: center;
 }
 
@@ -115,7 +114,7 @@ section div div {
     border-radius: 35px;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background-color: white;
-    margin-bottom: 20px; /* Отступ между карточками */
+    margin-bottom: 20px;
 }
 
 footer {
@@ -156,8 +155,7 @@ footer {
 
 .amount {
     width: 110px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
 }
 
 .price {
@@ -178,7 +176,7 @@ footer {
 }
 
 .item p {
-    margin: 0px;
+    margin: 0;
 }
 
 .item button {
@@ -186,7 +184,7 @@ footer {
     padding: 10px 30px;
     border-radius: 10px;
     cursor: pointer;
-    border: 0px;
+    border: 0;
 }
 
 .lunch_price {
@@ -201,7 +199,7 @@ footer {
 .lunch_volume {
     font-size: small;
     color: gray;
-    padding: 30px 0px 9px 0px;
+    padding: 30px 0 9px 0;
 }
 
 .active {
@@ -214,7 +212,6 @@ footer {
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: none;
 }
 
 #container_form div {
@@ -318,21 +315,20 @@ input[type="radio"]:hover {
     border-color: #999;
 }
 
-
 #deliveryTime div {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .details_form p, .orderFormDetails p {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 #deliveryTime label {
     display: flex;
-    align-items: center; 
-    gap: 10px; 
+    align-items: center;
+    gap: 10px;
 }
 
 .button-row {
@@ -343,7 +339,7 @@ input[type="radio"]:hover {
 }
 
 .form-button {
-    flex-grow: 1; 
+    flex-grow: 1;
     padding: 10px;
     background-color: #ffffff;
     border: 2px solid #000;
@@ -368,8 +364,6 @@ input[type="radio"]:hover {
 
 @media (max-width: 800px) {
     #mainimg {
-        padding: 0;
-        margin: 0;
         width: 500px;
     }
     section div {
@@ -379,14 +373,11 @@ input[type="radio"]:hover {
     nav {
         justify-content: space-between;
         padding: 0;
-        list-style: none;
     }
 }
 
 @media (max-width: 600px) {
     #mainimg {
-        padding: 0;
-        margin: 0;
         width: 100%;
     }
     #mainpar {
@@ -421,4 +412,96 @@ input[type="radio"]:hover {
     table, th, td {
         font-size: 11px;
     }
+}
+
+#order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#order-summary {
+    margin-top: 10px;
+}
+
+#total-price {
+    margin-top: 5px;
+}
+
+#order-items div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#order-items p {
+    margin: 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.order-column {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#container_form {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+.details_form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.orderFormDetails {
+    flex: 1;
+    min-width: 300px;
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formPS {
+    font-size: 12px;
+    color: #555;
 }
