@@ -1,0 +1,532 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html * {
+    font-size: 1em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    color: salmon;
+}
+
+nav {
+    font-size: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-left: 64px;
+}
+
+ul {
+    margin-left: 24px;
+}
+
+table {
+    margin-left: 64px;
+    table-layout: fixed;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: 1.7px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    word-wrap: break-word;
+    height: 23px;
+    font-size: 15px;
+}
+
+th {
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0 20px 20px;
+    align-items: center;
+}
+
+nav a {
+    margin-right: 15px;
+    color: #000;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 200px); 
+}
+
+header a {
+    transition: all 0.2s ease;
+    padding-right: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+header a:hover {
+    color: salmon;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+section div div {
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 35px;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+}
+
+#foot {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#mainheader {
+    font-size: 32px;
+}
+
+.crop-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 512px;
+}
+
+.number {
+    width: 20px;
+}
+
+.name {
+    width: 250px;
+}
+
+.amount {
+    width: 110px;
+    padding: 0 10px;
+}
+
+.price {
+    width: 50px;
+}
+
+.item:hover button {
+    background-color: rgb(114, 114, 114);
+}
+
+.item:hover {
+    border: 2px solid salmon;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 35px;
+}
+
+.item p {
+    margin: 0;
+}
+
+.item button {
+    background-color: #f1eee9;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0;
+}
+
+.lunch_price {
+    padding-top: 10px;
+    font-size: medium;
+}
+
+.lunch_name {
+    padding-top: 5px;
+}
+
+.lunch_volume {
+    font-size: small;
+    color: gray;
+    padding: 30px 0 9px 0;
+}
+
+.active {
+    color: tomato;
+}
+
+#container_form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#container_form div {
+    filter: none;
+}
+
+#order_form h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+select {
+    background-color: white;
+}
+
+.form-cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+}
+
+#order_form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+select, input[type="text"], input[type="tel"], input[type="time"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+input[type="radio"]:hover {
+    border-color: #999;
+}
+
+#deliveryTime div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details_form p, .orderFormDetails p {
+    margin-left: 0;
+}
+
+#deliveryTime label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.form-button {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-button:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .form-cols {
+        flex-direction: column;
+    }
+    .details_form, .orderFormDetails {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    #mainimg {
+        width: 500px;
+    }
+    section div {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    nav {
+        justify-content: space-between;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #mainimg {
+        width: 100%;
+    }
+    #mainpar {
+        padding: 0;
+        margin: 0;
+    }
+    table {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    table, th, td {
+        font-size: 13px;
+    }
+    h1 {
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+    }
+    section h2 {
+        text-align: center;
+    }
+    section div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    table, th, td {
+        font-size: 11px;
+    }
+}
+
+#order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#order-summary {
+    margin-top: 10px;
+}
+
+#total-price {
+    margin-top: 5px;
+}
+
+#order-items div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#order-items p {
+    margin: 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1;
+}
+
+.order-column {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#container_form {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+.details_form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.orderFormDetails {
+    flex: 1;
+    min-width: 300px;
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formPS {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Общая стилизация фильтров */
+#filters-soup a, #filters-main a, #filters-salad a, #filters-drink a, #filters-dessert a {
+    text-decoration: none; /* Убрать подчёркивание */
+    color: #008000; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    margin-right: 15px; /* Отступ между фильтрами */
+    text-transform: lowercase; /* Сделать текст строчным */
+    transition: color 0.2s ease;
+}
+
+/* Состояние при наведении */
+#filters-soup a:hover, #filters-main a:hover, #filters-salad a:hover,
+#filters-drink a:hover, #filters-dessert a:hover {
+    color: #4CAF50; /* Зелёный оттенок */
+}
+
+/* Активный фильтр */
+#filters-soup a.active, #filters-main a.active, #filters-salad a.active,
+#filters-drink a.active, #filters-dessert a.active {
+    background-color: #e6f4ea; /* Светло-зелёный фон */
+    color: #4CAF50; /* Тёмно-зелёный текст */
+    border-radius: 10px; /* Скругление краёв */
+    padding: 5px 10px; /* Внутренние отступы */
+}
